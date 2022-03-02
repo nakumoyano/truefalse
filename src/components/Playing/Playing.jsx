@@ -87,14 +87,14 @@ const Playing = () => {
 
   const [time, setTime] = useState(200);
   const [aleatorio, setAleatorio] = useState(Math.round(Math.random() * 6));
-  const [clase, setClase] = useState([
-    classes.history,
-    classes.viajes,
-    classes.music,
-    classes.sports,
-    classes.nature,
-    classes.art,
-  ]);
+  // const [clase, setClase] = useState([
+  //   classes.history,
+  //   classes.viajes,
+  //   classes.music,
+  //   classes.sports,
+  //   classes.nature,
+  //   classes.art,
+  // ]);
   const [vidas, setVidas] = useState(3);
   const [puntuacion, setPuntuacion] = useState(0);
   const [gameOver, setGameOver] = useState(null);
@@ -108,6 +108,7 @@ const Playing = () => {
 
     return () => clearInterval(cuentaAtras);
   }, [time, puntuacion]);
+  console.log(gameOver);
 
   const bien = () => {
     speechSynthesis.speak(
