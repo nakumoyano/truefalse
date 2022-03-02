@@ -14,11 +14,11 @@ const useStyle = makeStyles((theme) => ({
   },
   buttonContainer: {
     display: "block",
-    textAlign: "center",
     marginTop: "15px",
-    [theme.breakpoints.down("sm")]: {
-      margin: "auto",
-      padding: "auto",
+    textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      textAlign: "center",
+      marginRight: "18px",
     },
   },
   preguntaContainer: {
@@ -45,6 +45,7 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
+
     "&:hover": {
       color: "green",
     },
@@ -70,31 +71,23 @@ const useStyle = makeStyles((theme) => ({
   imgContainer: {
     margin: "auto",
     display: "block",
-    width: "250px",
+    width: "310px",
     padding: "auto",
   },
   card: {
     borderRadius: "10px",
   },
   media: {
-    width: "250px",
-    height: "200px",
+    width: "310px",
+    height: "250px",
   },
 }));
 
 const Playing = () => {
   const classes = useStyle();
 
-  const [time, setTime] = useState(200);
-  const [aleatorio, setAleatorio] = useState(Math.round(Math.random() * 6));
-  // const [clase, setClase] = useState([
-  //   classes.history,
-  //   classes.viajes,
-  //   classes.music,
-  //   classes.sports,
-  //   classes.nature,
-  //   classes.art,
-  // ]);
+  const [time, setTime] = useState(20);
+  const [aleatorio, setAleatorio] = useState(Math.round(Math.random() * 15));
   const [vidas, setVidas] = useState(3);
   const [puntuacion, setPuntuacion] = useState(0);
   const [gameOver, setGameOver] = useState(null);
@@ -114,20 +107,20 @@ const Playing = () => {
     speechSynthesis.speak(
       new SpeechSynthesisUtterance("¡¡¡RESPUESTA CORRECTA!!!")
     );
-    setAleatorio(Math.round(Math.random() * 6));
+    setAleatorio(Math.round(Math.random() * 15));
     setPuntuacion(puntuacion + 1);
-    setTime(200);
+    setTime(20);
   };
 
   const mal = () => {
     speechSynthesis.speak(
       new SpeechSynthesisUtterance("¡¡¡RESPUESTA INCORRECTA!!!")
     );
-    setAleatorio(Math.round(Math.random() * 6));
+    setAleatorio(Math.round(Math.random() * 15));
     setVidas(
       vidas > 0 ? vidas - 1 : setGameOver((window.location.href = "/gameover"))
     );
-    setTime(200);
+    setTime(20);
   };
 
   return (

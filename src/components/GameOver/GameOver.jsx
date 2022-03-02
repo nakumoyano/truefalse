@@ -62,6 +62,7 @@ const GameOver = () => {
         <div className={classes.containerImg}>
           <div className={classes.img}></div>
         </div>
+        {/* <h2>puntos: {this.props.puntuacion}</h2> */}
         <div className={classes.buttonContainer}>
           <Link to="/" className={classes.a}>
             <KeyboardBackspace className={classes.icon} />
