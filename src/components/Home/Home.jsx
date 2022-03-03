@@ -72,7 +72,7 @@ const Home = () => {
         <div className={classes.enlaces}>
           <div className={classes.containerEnlace}>
             <Link to="/instrucciones" className={classes.a}>
-              INSTRUCCIONES
+              MODO DE JUEGO
             </Link>
           </div>
           <div className={classes.containerEnlace}>
