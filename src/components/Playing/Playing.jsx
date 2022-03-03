@@ -87,7 +87,7 @@ const Playing = () => {
   const classes = useStyle();
 
   const [time, setTime] = useState(20);
-  const [aleatorio, setAleatorio] = useState(Math.round(Math.random() * 15));
+  const [aleatorio, setAleatorio] = useState(Math.round(Math.random() * 30));
   const [vidas, setVidas] = useState(3);
   const [puntuacion, setPuntuacion] = useState(0);
   const [gameOver, setGameOver] = useState(null);
@@ -107,7 +107,7 @@ const Playing = () => {
     speechSynthesis.speak(
       new SpeechSynthesisUtterance("¡¡¡RESPUESTA CORRECTA!!!")
     );
-    setAleatorio(Math.round(Math.random() * 15));
+    setAleatorio(Math.round(Math.random() * 30));
     setPuntuacion(puntuacion + 1);
     setTime(20);
   };
@@ -116,7 +116,7 @@ const Playing = () => {
     speechSynthesis.speak(
       new SpeechSynthesisUtterance("¡¡¡RESPUESTA INCORRECTA!!!")
     );
-    setAleatorio(Math.round(Math.random() * 15));
+    setAleatorio(Math.round(Math.random() * 30));
     setVidas(
       vidas > 0 ? vidas - 1 : setGameOver((window.location.href = "/gameover"))
     );

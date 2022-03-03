@@ -77,6 +77,7 @@ const useStyle = makeStyles((theme) => ({
     "&:hover": { color: "white" },
     [theme.breakpoints.down("md")]: {
       fontSize: "40px",
+      marginBottom: "10px",
     },
   },
 }));
@@ -115,7 +116,7 @@ const Intrucciones = () => {
           presionar el botón volver para reiniciar el juego.
         </Box>
         <Box className={classes.nota}>
-          NOTA: Cabe aclarar que el juego cuenta con una cantidad de 100
+          NOTA: Cabe aclarar que el juego cuenta con una cantidad de 50
           preguntas, por lo cual, es posible que te toque la misma pregunta más
           de una vez.
         </Box>
